@@ -1,0 +1,31 @@
+# Default configuration for protein function prediction pipeline
+
+data:
+  raw_sequences: data/raw/sequences.fasta
+  labels_file:   data/raw/labels.csv
+  processed_dir: data/processed/
+  splits_dir:    data/splits/
+  max_seq_len:   512          # Truncate sequences longer than this
+
+features:
+  strategy: one_hot           # Options: one_hot | kmer | physicochemical | esm
+  kmer_k: 3                   # Used when strategy is 'kmer'
+  esm_model: esm2_t6_8M_UR50D # Used when strategy is 'esm'
+
+model:
+  model_type: mlp             # Options: mlp | cnn
+  hidden_dim: 256
+  dropout: 0.3
+
+training:
+  epochs: 50
+  batch_size: 64
+  learning_rate: 1.0e-3
+  weight_decay: 1.0e-4
+  val_size: 0.1
+  test_size: 0.1
+  seed: 42
+
+artifacts:
+  model_dir:   artifacts/models/
+  results_dir: artifacts/results/

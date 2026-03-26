@@ -1,0 +1,24 @@
+# Core ML / data science
+numpy>=1.24
+pandas>=2.0
+scikit-learn>=1.3
+torch>=2.0
+
+# Biological sequence processing
+biopython>=1.81
+
+# Configuration
+pyyaml>=6.0
+
+# Experiment tracking
+# mlflow>=2.0  # Uncomment when ready
+
+# Utilities
+tqdm>=4.65
+loguru>=0.7
+
+# Notebooks
+jupyterlab>=4.0
+
+# Testing
+pytest>=7.4
